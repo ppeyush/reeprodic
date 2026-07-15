@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --reep-dark: #011627;
+  --reep-navy: #023047;
+  --reep-accent: #FB8500;
+  --reep-accent-tint: rgba(251, 133, 0, 0.15);
+  --reep-text-muted: #9AA7B5;
+  --reep-light: #F8FAFC;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 1, 22, 39;
+  --background-end-rgb: 1, 22, 39;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(251, 133, 0, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(251, 133, 0, 0.6); }
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.animate-kenburns {
+  animation: kenburns 20s ease-in-out infinite;
+}
+
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(251, 133, 0, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(251, 133, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251, 133, 0, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.glass-card {
+  background: rgba(2, 48, 71, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(251, 133, 0, 0.2);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(251, 133, 0, 0.3);
+  border-color: rgba(251, 133, 0, 0.5);
+}
+
+.text-muted-blue {
+  color: #9AA7B5;
+}
+
+.eyebrow-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #011627;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FB8500;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e67600;
+}
